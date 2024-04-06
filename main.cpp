@@ -1,12 +1,20 @@
 #include "mbed.h"
+#include <cstdio>
 
+InterruptIn buttn(PC_13);
 
-//just putting in a comment to show a second commit and push
+void buttn_fall(){
+    printf("button pressed!!\r\n");
+}
 
 // main() runs in its own thread in the OS
 int main()
 {
+    printf("This is mbed os v%d \r\n", MBED_VERSION);
+
+    buttn.fall(&buttn_fall);
     while (true) {
+
     }
 }
 
